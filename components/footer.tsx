@@ -25,7 +25,7 @@ export function Footer() {
         <div>
           <a href="#hero" className="flex items-center gap-2" aria-label="Prevox - início">
             <Image
-              src="/logo.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
               alt="Prevox - Direito antes do problema"
               width={56}
               height={56}

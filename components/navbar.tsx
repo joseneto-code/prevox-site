@@ -54,7 +54,7 @@ export function Navbar() {
           >
             <a href="#hero" className="flex items-center gap-2" aria-label="Prevox - início">
               <Image
-                src="/logo.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
                 alt="Prevox - Direito antes do problema"
                 width={48}
                 height={48}
