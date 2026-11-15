@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import { Menu, X, MessageCircle } from "lucide-react"
 
 const WHATSAPP_URL =
@@ -17,6 +16,9 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [progress, setProgress] = useState(0)
+  const logoSrc = process.env.NEXT_PUBLIC_BASE_PATH
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`
+    : "./logo.png"
 
   useEffect(() => {
     const onScroll = () => {
@@ -53,13 +55,13 @@ export function Navbar() {
             }`}
           >
             <a href="#hero" className="flex items-center gap-2" aria-label="Prevox - início">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
+              <img
+                src={logoSrc}
                 alt="Prevox - Direito antes do problema"
                 width={48}
                 height={48}
                 className="h-12 w-12 rounded-full object-contain"
-                priority
+                loading="eager"
               />
             </a>
           </div>

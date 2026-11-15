@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { MapPin } from "lucide-react"
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -19,13 +18,17 @@ function InstagramIcon({ className }: { className?: string }) {
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const logoSrc = process.env.NEXT_PUBLIC_BASE_PATH
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`
+    : "./logo.png"
+
   return (
     <footer className="border-t border-border bg-background py-14">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 md:flex-row">
         <div>
           <a href="#hero" className="flex items-center gap-2" aria-label="Prevox - início">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
+            <img
+              src={logoSrc}
               alt="Prevox - Direito antes do problema"
               width={56}
               height={56}
@@ -33,7 +36,10 @@ export function Footer() {
             />
           </a>
           <p className="mt-4 text-sm text-muted-foreground">
-            © {year} Prevox — Assessoria Jurídica Preventiva por Assinatura
+            © {year} PREVOX — Assessoria Jurídica Preventiva por Assinatura
+          </p>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
+            PREVOX é uma marca utilizada por Bassalo &amp; Barbosa Sociedade de Advogados, com registro na Seccional de Minas Gerais sob o n° 23.087.
           </p>
           <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4" />

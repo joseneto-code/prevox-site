@@ -24,6 +24,10 @@ export function Hero() {
             Assessoria Jurídica Preventiva por Assinatura
           </span>
 
+          <p className="mt-3 text-sm text-muted-foreground/90">
+            Serviços jurídicos prestados por Bassalo &amp; Barbosa Sociedade de Advogados.
+          </p>
+
           <h1 className="mt-6 text-balance font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Sua empresa está exposta.{" "}
             <span className="text-accent">Você só não sabe onde.</span>
